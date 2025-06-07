@@ -29,7 +29,7 @@ export const workspaces: Workspace[] = [
       { label: "Coworking", price: "30-50" },
       { label: "Studio", price: "300-500" },
     ],
-    amenities: ["High-speed WiFi", "24/7 Access", "Kitchenette", "Free Parking", "Event Space", "Bike Storage"],
+    amenities: ["Fast WiFi", "24/7 Access", "Kitchenette", "Free Parking", "Event Space", "Bike Storage"],
     website: "https://www.thenavalstore.com/",
     images: [
       "/images/naval-store-hero.webp",
@@ -74,7 +74,7 @@ export const workspaces: Workspace[] = [
   },
   {
     id: "fern",
-    name: "Fern, powered by Spacecubed",
+    name: "Fern",
     location: "Perth CBD",
     state: "WA",
     address: "79 St Georges Terrace, Perth, WA",
@@ -87,10 +87,10 @@ export const workspaces: Workspace[] = [
     ],
     amenities: [
       "Meeting Rooms",
-      "Locker Storage",
-      "Community Kitchen",
+      "Lockerd",
+      "Kitchen",
       "Meditation Room",
-      "Private Phone Booths",
+      "Phone Booths",
       "Free WiFi",
     ],
     website: "https://spacecubed.com/space/fern/",
@@ -105,14 +105,14 @@ export const workspaces: Workspace[] = [
   },
   {
     id: "cleaver-street",
-    name: "Cleaver Street & Co.",
+    name: "Cleaver Street",
     location: "West Perth",
     state: "WA",
     address: "14 Cleaver Street, West Perth",
     description:
       "Cleaver Street & Co. is a versatile coworking and event space in West Perth, known for its industrial charm, abundant natural light, and lush greenery. The venue is popular for both coworking and hosting events, offering WiFi, conference call facilities, projectors, and air conditioning. The open layout supports creativity and collaboration.",
     pricing: [{ label: "Daily", price: 40 }],
-    amenities: ["Free parking", "High speed wifi", "Barista coffee", "Meeting room hire", "Natural light", "Food"],
+    amenities: ["Free parking", "Fast Wifi", "Barista coffee", "Meeting rooms", "Natural light", "Food"],
     website: "https://cleaverstreet.com.au/",
     images: [
       "/placeholder.svg?height=400&width=600",
@@ -125,7 +125,7 @@ export const workspaces: Workspace[] = [
   },
   {
     id: "wework-perth",
-    name: "WeWork St Georges Terrace",
+    name: "WeWork Perth",
     location: "Perth CBD",
     state: "WA",
     address: "152 St Georges Terrace Perth, WA",
@@ -142,7 +142,7 @@ export const workspaces: Workspace[] = [
       "Parent's room",
       "Wellness room",
       "Showers",
-      "Free Barista Coffee",
+      "Barista Coffee",
       "Meeting rooms",
       "Onsite staff",
     ],
@@ -168,7 +168,7 @@ export const workspaces: Workspace[] = [
       { label: "Desk", price: 70 },
       { label: "Studio", price: 120 },
     ],
-    amenities: ["Communal Desks", "Gender Neutral Bathrooms", "Lockable Studios", "Free Wifi", "Community Vibe"],
+    amenities: ["Communal Desks", "Lockable Studios", "Free Wifi", "Community Vibe"],
     website: "https://westendworkers.com/",
     images: [
       "/placeholder.svg?height=400&width=600",
@@ -197,7 +197,7 @@ export const workspaces: Workspace[] = [
       "Free WiFi",
       "Community Kitchen",
       "Locker Storage",
-      "Private Phone Booths",
+      "Phone Booths",
       "Bike Room",
       "Free Printing",
       "Meeting Rooms",
@@ -215,7 +215,7 @@ export const workspaces: Workspace[] = [
   },
   {
     id: "claisebrook-design-community",
-    name: "Claisebrook Design Community",
+    name: "Claisebrook Design Co.",
     location: "Claisebrook",
     state: "WA",
     address: "25 Gladstone Street, Perth 6000 Western Australia",
@@ -226,7 +226,7 @@ export const workspaces: Workspace[] = [
       { label: "Office", price: 1635 },
     ],
     amenities: [
-      "Airconditioning",
+      "Air Con",
       "Printing",
       "Café",
       "Mailbox",
@@ -248,7 +248,7 @@ export const workspaces: Workspace[] = [
   },
   {
     id: "spaces-wentworth",
-    name: "Spaces – The Wentworth",
+    name: "Spaces Wentworth",
     location: "Perth CBD",
     state: "WA",
     address: "300 Murray Street, Level 2 East, The Wentworth Building, Perth 6000, WA",
