@@ -37,9 +37,14 @@ export function ListingContent({ space }: ListingContentProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 hover:text-[#67ad42] transition-colors duration-200"
+                    aria-label={`View ${space.name} location on Google Maps`}
                   >
                     <span className="text-[#222222] text-base font-mono">{space.address}</span>
-                    <ExternalLink className="h-4 w-4 text-[#222222] transition-transform duration-200 ease-smooth hover:scale-110" />
+                    <ExternalLink
+                      className="h-4 w-4 text-[#222222] transition-transform duration-200 ease-smooth hover:scale-110"
+                      aria-hidden="true"
+                    />
+                    <span className="sr-only">Opens in new tab</span>
                   </a>
                 </div>
               </div>
@@ -95,8 +100,13 @@ export function ListingContent({ space }: ListingContentProps) {
 
               {/* CTA Button */}
               <div>
-                <LargeButton href={space.website} className="w-full">
+                <LargeButton
+                  href={space.website}
+                  className="w-full"
+                  aria-label={`Visit ${space.name} official website`}
+                >
                   Visit website
+                  <span className="sr-only">Opens in new tab</span>
                 </LargeButton>
               </div>
             </div>
@@ -108,10 +118,12 @@ export function ListingContent({ space }: ListingContentProps) {
               <div key={index} className="w-full">
                 <Image
                   src={image || "/placeholder.svg"}
-                  alt={`${space.name} view ${index + 1}`}
+                  alt={`${space.name} workspace view ${index + 1} - ${index === 0 ? "main area" : index === 1 ? "meeting rooms" : index === 2 ? "common area" : "additional facilities"}`}
                   width={600}
                   height={338}
                   className="w-full aspect-video object-cover rounded-lg"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
                 />
               </div>
             ))}
