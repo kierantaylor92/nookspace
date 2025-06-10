@@ -21,7 +21,7 @@ export function WorkspaceGrid() {
             {filteredWorkspaces.map((workspace) => (
               <Link key={workspace.id} href={`/spaces/${workspace.id}`}>
                 <div
-                  className="bg-white rounded-lg overflow-hidden cursor-pointer p-4 transition-all duration-300 ease-smooth focus-within:ring-2 focus-within:ring-[#67ad42] focus-within:ring-offset-2"
+                  className="bg-white rounded-lg overflow-hidden cursor-pointer p-4 transition-all duration-300 ease-smooth"
                   style={{
                     boxShadow:
                       "0px 15px 4px 0px rgba(0, 0, 0, 0.00), 0px 9px 4px 0px rgba(0, 0, 0, 0.00), 0px 5px 3px 0px rgba(0, 0, 0, 0.02), 0px 2px 2px 0px rgba(0, 0, 0, 0.03), 0px 1px 1px 0px rgba(0, 0, 0, 0.03)",
@@ -37,12 +37,10 @@ export function WorkspaceGrid() {
                 >
                   <Image
                     src={workspace.images[0] || "/placeholder.svg"}
-                    alt={`Interior view of ${workspace.name} coworking space in ${workspace.location}, ${workspace.state}`}
+                    alt={`${workspace.name} ${workspace.location}`}
                     width={360}
                     height={202}
                     className="w-full aspect-video object-cover rounded-lg mb-4"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    loading="lazy"
                   />
                   <div>
                     <h3 className="text-[#00000A] font-medium text-base transition-colors duration-200 ease-smooth hover:text-black">

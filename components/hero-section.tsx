@@ -18,12 +18,10 @@ export function HeroSection() {
           <div className="w-full md:w-1/2 flex justify-center md:justify-end px-4 pb-8 md:pb-0">
             <Image
               src="/images/coworking-space-nook-eco-friendly-workspace-hero.jpg"
-              alt="Modern eco-friendly coworking space with green design elements and natural lighting"
+              alt="3D green leaf-shaped coworking space nook on grass representing eco-friendly workspace design"
               width={400}
               height={300}
               className="object-contain max-w-full h-auto"
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>
