@@ -1,12 +1,26 @@
+"use client"
+
+import { useEffect, useState } from "react"
+
 export function AboutContent() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   return (
     <section className="py-3 px-3 border-l border-r border-dashed border-[#222222]/25">
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {/* Information Panel - Left Side */}
-          <div className="lg:sticky lg:top-12 lg:h-fit">
+          <div
+            className={`lg:sticky lg:top-12 lg:h-fit transition-all duration-700 ease-smooth ${
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
+          >
             <div
-              className="bg-white rounded-lg p-6 space-y-6"
+              className="bg-white rounded-lg p-6 space-y-6 transition-all duration-300 ease-smooth hover:shadow-lg"
               style={{
                 boxShadow:
                   "0px 0px 0px 1px rgba(0, 0, 0, 0.04), 0px 1px 1px -0.5px rgba(0, 0, 0, 0.04), 0px 3px 3px -1.5px rgba(0, 0, 0, 0.04), 0px 6px 6px -3px rgba(0, 0, 0, 0.04), 0px 12px 12px -6px rgba(0, 0, 0, 0.04), 0px 24px 24px -12px rgba(0, 0, 0, 0.04)",
@@ -20,12 +34,14 @@ export function AboutContent() {
                 <p className="text-[#672eec] text-lg">Connecting you with the perfect workspace</p>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
               {/* Purpose */}
               <div>
-                <h2 className="text-2xl font-bold text-[#222222] mb-3" style={{ letterSpacing: "-0.02em" }}>
+                <h2
+                  className="text-2xl font-bold text-[#222222] mb-3 transition-colors duration-200 hover:text-[#67ad42]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   Our Purpose
                 </h2>
                 <p className="text-[#222222] text-lg leading-relaxed mb-4">
@@ -40,17 +56,22 @@ export function AboutContent() {
                 </p>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
               {/* Features */}
               <div>
-                <h2 className="text-2xl font-bold text-[#222222] mb-3" style={{ letterSpacing: "-0.02em" }}>
+                <h2
+                  className="text-2xl font-bold text-[#222222] mb-3 transition-colors duration-200 hover:text-[#67ad42]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   What We Offer
                 </h2>
                 <div className="grid grid-cols-1 gap-4">
-                  <div className="flex items-start space-x-3">
-                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1">
+                  <div
+                    className="flex items-start space-x-3 opacity-0 animate-fade-in group"
+                    style={{ animationDelay: "200ms", animationFillMode: "forwards" }}
+                  >
+                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1 transition-transform duration-200 ease-smooth group-hover:scale-110 group-hover:rotate-12">
                       <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -66,8 +87,11 @@ export function AboutContent() {
                       </p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1">
+                  <div
+                    className="flex items-start space-x-3 opacity-0 animate-fade-in group"
+                    style={{ animationDelay: "300ms", animationFillMode: "forwards" }}
+                  >
+                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1 transition-transform duration-200 ease-smooth group-hover:scale-110 group-hover:rotate-12">
                       <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -81,8 +105,11 @@ export function AboutContent() {
                       <p className="text-[#222222]/80">Find spaces by state and city to discover options near you</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1">
+                  <div
+                    className="flex items-start space-x-3 opacity-0 animate-fade-in group"
+                    style={{ animationDelay: "400ms", animationFillMode: "forwards" }}
+                  >
+                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center mt-1 transition-transform duration-200 ease-smooth group-hover:scale-110 group-hover:rotate-12">
                       <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -99,53 +126,59 @@ export function AboutContent() {
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
               {/* Colophon */}
               <div>
-                <h2 className="text-2xl font-bold text-[#222222] mb-3" style={{ letterSpacing: "-0.02em" }}>
+                <h2
+                  className="text-2xl font-bold text-[#222222] mb-3 transition-colors duration-200 hover:text-[#67ad42]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   Colophon
                 </h2>
                 <div className="space-y-3">
-                  <div>
+                  <div className="transition-all duration-200 hover:translate-x-1">
                     <h3 className="font-medium text-[#222222] mb-1">Design & Development</h3>
                     <p className="text-[#222222]/80 font-mono text-sm">
                       Built with Next.js, TypeScript, and Tailwind CSS
                     </p>
                   </div>
-                  <div>
+                  <div className="transition-all duration-200 hover:translate-x-1">
                     <h3 className="font-medium text-[#222222] mb-1">Typography</h3>
                     <p className="text-[#222222]/80 font-mono text-sm">
                       Public Sans for interface, IBM Plex Mono for data
                     </p>
                   </div>
-                  <div>
+                  <div className="transition-all duration-200 hover:translate-x-1">
                     <h3 className="font-medium text-[#222222] mb-1">Hosting</h3>
                     <p className="text-[#222222]/80 font-mono text-sm">
                       Deployed on Vercel with continuous integration
                     </p>
                   </div>
-                  <div>
+                  <div className="transition-all duration-200 hover:translate-x-1">
                     <h3 className="font-medium text-[#222222] mb-1">Version</h3>
                     <p className="text-[#222222]/80 font-mono text-sm">v1.0.0 - January 2025</p>
                   </div>
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
               {/* Contact */}
               <div>
-                <h2 className="text-2xl font-bold text-[#222222] mb-3" style={{ letterSpacing: "-0.02em" }}>
+                <h2
+                  className="text-2xl font-bold text-[#222222] mb-3 transition-colors duration-200 hover:text-[#67ad42]"
+                  style={{ letterSpacing: "-0.02em" }}
+                >
                   Get In Touch
                 </h2>
                 <p className="text-[#222222] text-lg leading-relaxed mb-4">
                   Have a suggestion for a new space or feedback about the site? We'd love to hear from you.
                 </p>
                 <div className="flex items-center space-x-2">
-                  <span className="text-[#672eec] text-lg font-mono">hello@nookspace.com</span>
+                  <span className="text-[#672eec] text-lg font-mono transition-all duration-200 hover:text-[#67ad42] hover:translate-x-1">
+                    hello@nookspace.com
+                  </span>
                 </div>
               </div>
             </div>

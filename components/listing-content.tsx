@@ -4,13 +4,19 @@ import Image from "next/image"
 import { ExternalLink } from "lucide-react"
 import { LargeButton } from "@/components/ui/large-button"
 import type { Workspace } from "@/lib/workspaces"
+import { useEffect, useState } from "react"
 
 interface ListingContentProps {
   space: Workspace
 }
 
 export function ListingContent({ space }: ListingContentProps) {
-  // Determine grid columns based on number of pricing options
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
   const gridCols = space.pricing.length === 2 ? "grid-cols-2" : "grid-cols-3"
 
   return (
@@ -18,7 +24,11 @@ export function ListingContent({ space }: ListingContentProps) {
       <div className="mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
           {/* Information Panel - Left Side */}
-          <div className="lg:sticky lg:top-12 lg:h-fit">
+          <div
+            className={`lg:sticky lg:top-12 lg:h-fit transition-all duration-700 ease-smooth ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+            }`}
+          >
             <div
               className="bg-white rounded-lg p-6 space-y-6 transition-all duration-300 ease-smooth hover:shadow-lg"
               style={{
@@ -36,29 +46,28 @@ export function ListingContent({ space }: ListingContentProps) {
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(space.address)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-2 hover:text-[#67ad42] transition-colors duration-200"
+                    className="flex items-center space-x-2 hover:text-[#67ad42] transition-colors duration-200 group"
                   >
                     <span className="text-[#222222] text-base font-mono">{space.address}</span>
-                    <ExternalLink className="h-4 w-4 text-[#222222] transition-transform duration-200 ease-smooth hover:scale-110" />
+                    <ExternalLink className="h-4 w-4 text-[#222222] transition-all duration-200 ease-smooth group-hover:scale-110 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
-              {/* Description */}
               <div>
                 <p className="text-[#222222] text-base leading-[140%]">{space.description}</p>
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
-              {/* Pricing */}
               <div className={`grid ${gridCols} gap-3`}>
                 {space.pricing.map((option, index) => (
-                  <div key={index} className="bg-[#f2f2f2] rounded-lg p-6 text-center">
+                  <div
+                    key={index}
+                    className="bg-[#f2f2f2] rounded-lg p-6 text-center transition-all duration-200 ease-smooth hover:bg-[#e8e8e8] hover:scale-105"
+                  >
                     <div className="text-[#222222] text-lg font-medium">
                       {option.label}: ${option.price}
                     </div>
@@ -66,17 +75,19 @@ export function ListingContent({ space }: ListingContentProps) {
                 ))}
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
-              {/* Amenities */}
               <div className="grid grid-cols-3 gap-4">
                 {space.amenities.map((amenity, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-2 transition-all duration-200 ease-smooth hover:text-[#67ad42]"
+                    className="flex items-center space-x-2 transition-all duration-200 ease-smooth hover:text-[#67ad42] group opacity-0 animate-fade-in"
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                      animationFillMode: "forwards",
+                    }}
                   >
-                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center transition-transform duration-200 ease-smooth hover:scale-110">
+                    <div className="w-4 h-4 rounded-full bg-[#67ad42] flex items-center justify-center transition-transform duration-200 ease-smooth group-hover:scale-110 group-hover:rotate-12">
                       <svg className="w-2.5 h-2.5 text-white" fill="currentColor" viewBox="0 0 20 20">
                         <path
                           fillRule="evenodd"
@@ -90,10 +101,8 @@ export function ListingContent({ space }: ListingContentProps) {
                 ))}
               </div>
 
-              {/* Divider */}
               <div className="border-t border-dashed border-[#222222]/25"></div>
 
-              {/* CTA Button */}
               <div>
                 <LargeButton href={space.website} className="w-full">
                   Visit website
@@ -103,15 +112,26 @@ export function ListingContent({ space }: ListingContentProps) {
           </div>
 
           {/* Image Gallery - Right Side */}
-          <div className="space-y-3">
+          <div
+            className={`space-y-3 transition-all duration-700 ease-smooth delay-200 ${
+              isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"
+            }`}
+          >
             {space.images.map((image, index) => (
-              <div key={index} className="w-full">
+              <div
+                key={index}
+                className="w-full overflow-hidden rounded-lg opacity-0 animate-fade-in"
+                style={{
+                  animationDelay: `${(index + 2) * 150}ms`,
+                  animationFillMode: "forwards",
+                }}
+              >
                 <Image
                   src={image || "/placeholder.svg"}
                   alt={`${space.name} view ${index + 1}`}
                   width={600}
                   height={338}
-                  className="w-full aspect-video object-cover rounded-lg"
+                  className="w-full aspect-video object-cover rounded-lg transition-transform duration-500 ease-smooth hover:scale-105"
                 />
               </div>
             ))}
