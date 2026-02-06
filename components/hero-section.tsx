@@ -38,7 +38,7 @@ export function HeroSection() {
               alt="3D green leaf-shaped coworking space nook on grass representing eco-friendly workspace design"
               width={400}
               height={300}
-              className="object-contain max-w-full h-auto transition-transform duration-500 ease-smooth hover:scale-105"
+              className="object-contain max-w-full h-auto"
             />
           </div>
         </div>

@@ -14,7 +14,7 @@ export function SubmitSection() {
   return (
     <section className="py-3 px-3 border-b border-l border-r border-dashed border-[#222222]/25">
       <div
-        className={`py-16 px-12 rounded-lg flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-24 transition-all duration-700 ease-smooth hover:scale-[1.01] ${
+        className={`py-16 px-12 rounded-lg flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-24 transition-all duration-700 ease-smooth ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
         style={{
