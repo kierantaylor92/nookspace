@@ -27,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${publicSans.variable} ${ibmPlexMono.variable}`}>
-      <body className={`${publicSans.className} antialiased`}>{children}</body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   )
 }
