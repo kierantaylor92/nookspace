@@ -20,10 +20,10 @@ export function HeroSection() {
             }`}
           >
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#67ad42] mb-4"
+              className="text-4xl sm:text-5xl md:text-6xl font-semibold text-[#67ad42] mb-4"
               style={{ letterSpacing: "-0.02em" }}
             >
-              Nookspace.
+              Nookbase.
             </h1>
             <p className="text-lg sm:text-xl text-gray-600">Discover co-working spaces near you.</p>
           </div>
@@ -38,7 +38,7 @@ export function HeroSection() {
               alt="3D green leaf-shaped coworking space nook on grass representing eco-friendly workspace design"
               width={400}
               height={300}
-              className="object-contain max-w-full h-auto transition-transform duration-500 ease-smooth hover:scale-105"
+              className="object-contain max-w-full h-auto"
             />
           </div>
         </div>

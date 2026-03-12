@@ -34,7 +34,7 @@ export function SubmitContent() {
               {/* Description */}
               <div>
                 <p className="text-[#222222] text-lg leading-relaxed mb-4">
-                  Know of a great coworking space that's not listed on Nookspace? We'd love to hear about it! Share the
+                  Know of a great coworking space that's not listed on Nookbase? We'd love to hear about it! Share the
                   details with us and help fellow remote workers discover amazing new places to be productive.
                 </p>
                 <p className="text-[#222222] text-lg leading-relaxed">
@@ -74,7 +74,7 @@ export function SubmitContent() {
                     required
                     disabled={isPending}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#67ad42] focus:border-transparent transition-all duration-200 ease-smooth disabled:opacity-50 disabled:cursor-not-allowed resize-none"
-                    placeholder="Share details about the space - location, what makes it special, amenities, atmosphere, or anything else that would help us understand why it's a great addition to Nookspace..."
+                    placeholder="Share details about the space - location, what makes it special, amenities, atmosphere, or anything else that would help us understand why it's a great addition to Nookbase..."
                   />
                 </div>
 

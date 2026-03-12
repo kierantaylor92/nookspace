@@ -29,7 +29,7 @@ export function AboutContent() {
               {/* Header */}
               <div>
                 <h1 className="text-4xl font-bold text-[#222222] mb-2" style={{ letterSpacing: "-0.02em" }}>
-                  About Nookspace
+                  About Nookbase
                 </h1>
                 <p className="text-[#672eec] text-lg">Connecting you with the perfect workspace</p>
               </div>
@@ -45,7 +45,7 @@ export function AboutContent() {
                   Our Purpose
                 </h2>
                 <p className="text-[#222222] text-lg leading-relaxed mb-4">
-                  Nookspace is a curated directory of coworking spaces designed to help remote workers, freelancers, and
+                  Nookbase is a curated directory of coworking spaces designed to help remote workers, freelancers, and
                   digital nomads find their perfect workspace. We believe that the right environment can dramatically
                   improve productivity, creativity, and well-being.
                 </p>
@@ -177,7 +177,7 @@ export function AboutContent() {
                 </p>
                 <div className="flex items-center space-x-2">
                   <span className="text-[#672eec] text-lg font-mono transition-all duration-200 hover:text-[#67ad42] hover:translate-x-1">
-                    hello@nookspace.com
+                    hello@nookbase.com
                   </span>
                 </div>
               </div>

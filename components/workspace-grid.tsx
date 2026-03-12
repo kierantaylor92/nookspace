@@ -40,11 +40,11 @@ export function WorkspaceGrid() {
 
       <section className="py-3 px-3 border-b border-l border-r border-dashed border-[#222222]/25">
         <div className="mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 items-stretch">
             {paginatedData.map((workspace, index) => (
-              <Link key={workspace.id} href={`/spaces/${workspace.id}`}>
+              <Link key={workspace.id} href={`/spaces/${workspace.id}`} className="h-full">
                 <div
-                  className="bg-white rounded-lg overflow-hidden cursor-pointer p-4 transition-all duration-300 ease-smooth opacity-0 animate-fade-in hover:-translate-y-1"
+                  className="group h-full flex flex-col bg-white rounded-lg overflow-hidden cursor-pointer px-4 pt-4 pb-4 transition-all duration-300 ease-smooth opacity-0 animate-fade-in hover:-translate-y-1"
                   style={{
                     boxShadow:
                       "0px 15px 4px 0px rgba(0, 0, 0, 0.00), 0px 9px 4px 0px rgba(0, 0, 0, 0.00), 0px 5px 3px 0px rgba(0, 0, 0, 0.02), 0px 2px 2px 0px rgba(0, 0, 0, 0.03), 0px 1px 1px 0px rgba(0, 0, 0, 0.03)",
@@ -60,19 +60,19 @@ export function WorkspaceGrid() {
                       "0px 15px 4px 0px rgba(0, 0, 0, 0.00), 0px 9px 4px 0px rgba(0, 0, 0, 0.00), 0px 5px 3px 0px rgba(0, 0, 0, 0.02), 0px 2px 2px 0px rgba(0, 0, 0, 0.03), 0px 1px 1px 0px rgba(0, 0, 0, 0.03)"
                   }}
                 >
-                  <div className="overflow-hidden rounded-lg mb-4">
+                  <div className="overflow-hidden rounded-lg mb-3">
                     <Image
                       src={workspace.images[0] || "/placeholder.svg"}
                       alt={`${workspace.name} ${workspace.location}`}
                       width={360}
                       height={202}
-                      className="w-full aspect-video object-cover transition-transform duration-500 ease-smooth hover:scale-110"
+                      className="w-full aspect-video object-cover transition-transform duration-500 ease-smooth group-hover:scale-110"
                     />
                   </div>
                   <div>
-                    <h3 className="text-[#00000A] font-medium text-base transition-colors duration-200 ease-smooth hover:text-[#67ad42]">
+                    <h3 className="text-[#00000A] font-medium text-base">
                       {workspace.name}{" "}
-                      <span className="text-[#00000A]/72 font-normal">
+                      <span className="text-muted-foreground font-normal">
                         {workspace.location}, {workspace.state}
                       </span>
                     </h3>

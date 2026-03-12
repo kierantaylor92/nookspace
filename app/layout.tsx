@@ -15,7 +15,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Nookspace - Discover Coworking Spaces",
+  title: "Nookbase - Discover Coworking Spaces",
   description: "Find the perfect coworking space near you",
     generator: 'v0.dev'
 }
